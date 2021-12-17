@@ -1,6 +1,5 @@
 import streamlit as st
 from helper import get_pred_label, load_model, load_img, convert, pred_stats
-
 model = load_model("big_dog_model.h5")
 
 st.markdown("""

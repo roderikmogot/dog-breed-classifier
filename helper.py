@@ -5,6 +5,8 @@ import pandas as pd
 import streamlit as st
 from PIL import Image
 import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
 
 labels_csv = pd.read_csv("labels.csv")
 
