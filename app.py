@@ -1,8 +1,5 @@
-import matplotlib
 import streamlit as st
 from helper import get_pred_label, load_model, load_img, convert, pred_stats
-import seaborn as sns
-import matplotlib.pyplot as plt
 model = load_model("big_dog_model.h5")
 
 st.markdown("""
@@ -24,5 +21,3 @@ if image_file:
   st.markdown("<h1 style='text-align: center; color: white;'>Top 5 prediction statistics</h1>", unsafe_allow_html=True)
 
   pred_stats(custom_preds[0])
-
-  print(matplotlib.__version__)
