@@ -1,5 +1,5 @@
 import streamlit as st
-from helper import get_pred_label, load_model, load_img, convert
+from helper import get_pred_label, load_model, load_img, convert, pred_stats
 
 model = load_model("big_dog_model.h5")
 
@@ -18,3 +18,7 @@ if image_file:
   custom_pred_labels = [get_pred_label(custom_preds[i]) for i in range(len(custom_preds))]
 
   st.write(f"Predicted: {custom_pred_labels[0]}, with an accuracy of {custom_preds[0].max()*100:.0f}%!")
+
+  st.markdown("<h1 style='text-align: center; color: white;'>Top 5 prediction statistics</h1>", unsafe_allow_html=True)
+
+  pred_stats(custom_preds[0])

@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from PIL import Image
+import matplotlib.pyplot as plt
 
 labels_csv = pd.read_csv("labels.csv")
 
@@ -29,3 +30,13 @@ def convert(image_file):
 
 def get_pred_label(prediction_probabilities):
   return unique_breeds[np.argmax(prediction_probabilities)]
+
+def pred_stats(prediction_probabilities):
+  top_5_pred_indexes = prediction_probabilities.argsort()[-5:][::-1]
+  top_5_pred_labels = unique_breeds[top_5_pred_indexes]
+  top_5_pred_values = prediction_probabilities[top_5_pred_indexes]
+  fig, ax = plt.subplots()
+  ax.bar(np.arange(len(top_5_pred_labels)), top_5_pred_values, color="green")
+  ax.set_xticks(np.arange(len(top_5_pred_labels)), labels=top_5_pred_labels, rotation="vertical")
+  st.pyplot(fig)
+  
