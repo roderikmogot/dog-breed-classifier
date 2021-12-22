@@ -16,6 +16,6 @@ if image_file:
 
   st.write(f"Predicted: {custom_pred_labels[0]}, with an accuracy of {custom_preds[0].max()*100:.0f}%!")
 
-  st.markdown("<h3 style='text-align: left; color: white;'>Top 5 prediction statistics</h3>", unsafe_allow_html=True)
+  st.markdown("<h3 style='text-align: left; color: white;'>Top 5 predictions</h3>", unsafe_allow_html=True)
 
   pred_stats(custom_preds[0])
