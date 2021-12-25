@@ -38,13 +38,13 @@ def pred_stats(prediction_probabilities):
   top_5_pred_labels = unique_breeds[top_5_pred_indexes]
   top_5_pred_values = prediction_probabilities[top_5_pred_indexes]
   fig, ax = plt.subplots()
-  set_color = ['gray' if (x < tf.reduce_max(top_5_pred_values)) else 'green' for x in top_5_pred_values ]
+  set_color = ['gray' if (x < tf.reduce_max(top_5_pred_values)) else 'green' for x in top_5_pred_values]
   bar_plot = ax.bar(np.arange(len(top_5_pred_labels)), top_5_pred_values, color=set_color)
   for idx,rect in enumerate(bar_plot):
         height = rect.get_height()
         ax.text(rect.get_x() + rect.get_width()/2., height,
                 str(f"{top_5_pred_values[idx]*100:.1f}%"),
-                ha='center', va='bottom', rotation=0, c="red")
+                ha='center', va='bottom', rotation=0, color=set_color[idx])
   ax.set_xticks(np.arange(len(top_5_pred_labels)), labels=top_5_pred_labels, rotation="vertical")
   st.pyplot(fig)
   
