@@ -1,8 +1,12 @@
 import streamlit as st
-from helper import get_pred_label, load_model, load_img, convert, pred_stats
+from helper import get_pred_label, load_model, load_img, convert, pred_stats, unique_breeds
 model = load_model("big_dog_model.h5")
 
 st.markdown("# Dog breed classifier")
+sd = st.sidebar.selectbox(
+  "Types of dog that can be classified",
+  unique_breeds
+)
 
 image_file = st.file_uploader("Choose an image file", type=['jpeg', 'jpg', 'png'])
 
