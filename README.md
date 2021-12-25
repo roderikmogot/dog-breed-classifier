@@ -20,3 +20,11 @@ Beberapa hal yang dapat menjadi patokan pengerjaan aplikasi ini:
 
 * Arsitektur model dapat dibandingkan dengan EfficientNet, ResNet dan dll.
 * Dataset bisa ditingkatkan ~50000-100000 gambar dengan lebih dari >300 jenis anjing.
+
+## Perbandingan ResNet vs. EfficientNet vs. MobileNet
+
+Setiap model dilatih sebanyak 5 epochs pada training dataset.
+
+https://tensorboard.dev/experiment/lm0IPlIPQ4qzORzzGTnaCw/#scalars
+
+Dari hasil tersebut, MobileNet dapat disimpulkan bahwa dapat menghasilkan akurasi yang lebih tinggi per epochnya dibandingkan dari arsitektur lawannya.
