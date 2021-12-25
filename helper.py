@@ -43,7 +43,7 @@ def pred_stats(prediction_probabilities):
   for idx,rect in enumerate(bar_plot):
         height = rect.get_height()
         ax.text(rect.get_x() + rect.get_width()/2., height,
-                str(f"{top_5_pred_values[idx]:.2f}"),
+                str(f"{top_5_pred_values[idx]*100:.1f}%"),
                 ha='center', va='bottom', rotation=0, c="red")
   ax.set_xticks(np.arange(len(top_5_pred_labels)), labels=top_5_pred_labels, rotation="vertical")
   st.pyplot(fig)
