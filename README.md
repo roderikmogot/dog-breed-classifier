@@ -1,5 +1,7 @@
 # Dog Breed Classifier
 
+![Dog Breed Flywheel](./flywheel.jpeg)
+
 ## Masalah apa yang ingin dipecahkan?
 
 Untuk mengidentifikasi jenis anjing.
