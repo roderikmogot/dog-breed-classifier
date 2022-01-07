@@ -39,7 +39,7 @@ def pred_stats(prediction_probabilities):
   top_5_pred_values = prediction_probabilities[top_5_pred_indexes]
   fig, ax = plt.subplots()
   set_color = ['gray' if (x < tf.reduce_max(top_5_pred_values)) else 'green' for x in top_5_pred_values]
-  bar_plot = ax.bar(np.arange(len(top_5_pred_labels)), top_5_pred_values, color=set_color)
+  bar_plot = ax.bar(np.arange(len(top_5_pred_labels)), top_5_pred_values*100, color=set_color)
   for idx,rect in enumerate(bar_plot):
         height = rect.get_height()
         ax.text(rect.get_x() + rect.get_width()/2., height,
