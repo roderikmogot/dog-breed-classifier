@@ -30,3 +30,13 @@ Setiap model dilatih sebanyak 5 epochs pada training dataset.
 https://tensorboard.dev/experiment/lm0IPlIPQ4qzORzzGTnaCw/#scalars
 
 Dari hasil tersebut, MobileNet dapat disimpulkan bahwa dapat menghasilkan akurasi yang lebih tinggi per epochnya dibandingkan dari arsitektur lawannya.
+
+## Cara menggunakan repository ini
+
+* `app.py` untuk melakukan hosting aplikasi ini ke platform Streamlit.
+* `big_dog_model.h5` merupakan model yang sudah dilatih dan siap digunakan di `app.py`.
+* `helper.py` terisi beberapa fungsi yang nantinya digunakan untuk `app.py`.
+* `labels.csv` merupakan file berisi label data yang sudah didownload dari Kaggle.
+* `modelling_comparison.ipynb` adalah file pembandingan dari beberapa arsitektur yang akan digunakan.
+* `modelling.ipynb` adalah **file utama** pengerjaan proyek ini.
+* `requirements.txt` untuk keperluan hosting di Streamlit.
